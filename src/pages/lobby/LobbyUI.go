@@ -6,17 +6,22 @@ import (
 	"github.com/rivo/tview"
 )
 
+var sample string = "In Go, backticks denote raw string literals. Within these literals, all characters, including newlines and other special characters, are interpreted literally, except for the backtick character itself. Therefore, a raw string literal cannot contain a backtick."
+
 func Lobby() *tview.Flex {
 
-	box := tview.NewFlex().
-		AddItem(tview.NewBox(), 0, 1, false).
-		AddItem(tview.NewFlex().SetDirection(tview.FlexRow).
-			AddItem(tview.NewBox(), 0, 1, false).
-			AddItem(components_lobby.LobbyForm(), 0, 2, true).
-			AddItem(tview.NewBox(), 5, 1, false),
-			0, 2, true).
-		AddItem(tview.NewBox(), 0, 1, false)
-
-	box.SetBorder(true)
+	box := tview.NewFlex().SetDirection(tview.FlexRow).
+		AddItem(components_lobby.LobbyLogo(), 0, 2, false).
+		AddItem(tview.NewFlex().SetDirection(tview.FlexColumn).
+			AddItem(tview.NewBox(), 0, 3, false).
+			AddItem(components_lobby.LobbyForm(), 0, 3, true).
+			AddItem(tview.NewBox(), 0, 3, false),
+			0, 1, true).		
+		AddItem(tview.NewFlex().SetDirection(tview.FlexColumn).
+			AddItem(tview.NewBox(), 0, 2, false).
+			AddItem(tview.NewTextView().SetText(sample), 0, 3, true).
+			AddItem(tview.NewBox(), 0, 2, false),
+			0, 1, true)
+		box.SetBorder(true)
 	return box
 }
