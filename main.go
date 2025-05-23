@@ -11,7 +11,7 @@ func main() {
 
 	app := tview.NewApplication()
 	box := TUI.Lobby()
-	if err := app.SetRoot(box, true).Run(); err != nil {
+	if err := app.SetRoot(box, true).EnableMouse(true).Run(); err != nil {
 		panic(err)
 	}
 
