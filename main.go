@@ -1,7 +1,7 @@
 package main
 
 import (
-	TUI "main/src/pages/lobby"
+	TUI "main/src/pages/chatroom"
 
 	"github.com/rivo/tview"
 )
@@ -10,13 +10,13 @@ func main() {
 
 
 	app := tview.NewApplication()
-	box := TUI.Lobby()
+	box := TUI.Chatroom()
 	if err := app.SetRoot(box, true).EnableMouse(true).Run(); err != nil {
 		panic(err)
 	}
 
 	
 	
-	TUI.Lobby()
+	TUI.Chatroom()
 }
 

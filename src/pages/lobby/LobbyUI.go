@@ -16,12 +16,12 @@ func Lobby() *tview.Flex {
 			AddItem(tview.NewBox(), 0, 3, false).
 			AddItem(components_lobby.LobbyForm(), 0, 3, true).
 			AddItem(tview.NewBox(), 0, 3, false),
-			0, 1, true).		
+			0, 1, true).
 		AddItem(tview.NewFlex().SetDirection(tview.FlexColumn).
 			AddItem(tview.NewBox(), 0, 2, false).
 			AddItem(tview.NewTextView().SetText(sample), 0, 3, true).
 			AddItem(tview.NewBox(), 0, 2, false),
 			0, 1, true)
-		box.SetBorder(true)
+	box.SetBorder(true)
 	return box
 }
