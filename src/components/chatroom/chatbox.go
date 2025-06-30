@@ -8,7 +8,7 @@ func ChatArea() *tview.TextArea {
 
 	box :=  tview.NewTextArea().SetPlaceholder("Enter your text here...")
 
-	box.SetBorder(true).SetTitle("Chat Area")
+	box.SetBorder(true).SetTitle("Alt + E")
 	return box
 }
 
